@@ -1,85 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultra Wallpaper</title>
+    <title>Bootstrap Grid Practice Complete Fixed</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-         .nav-item{
+        .nav-item {
             border: 1px solid white;
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-        .nav-link{
+
+        .nav-link {
             color: white;
         }
-        .nav-item:hover{
+
+        .nav-item:hover {
             background-color: rgb(255, 255, 255);
             color: black !important;
             transform: scale(1.08);
         }
-        .logo-img{
+
+        .logo-img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
         }
-        .logo-title{
+
+        .logo-title {
             color: white;
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 0;
         }
+
         .card.h-100 {
             transition: all 0.3s ease;
         }
+
         .card.h-100:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
         }
-        .card-title{
+
+        .card-title {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        .card-text{
+
+        .card-text {
             font-size: 25px;
             font-family: 'Times New Roman', Times, serif;
         }
-        .card.h-100{
+
+        .card.h-100 {
             border-color: rgba(5, 0, 0, 0.425);
         }
-        .trending_item{
+
+        .trending_item {
             transition: all 0.3s ease;
             border-radius: 8px;
             overflow: hidden;
         }
-        .trending_item:hover{
+
+        .trending_item:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
-        .trendD{
+
+        .trendD {
             display: flex;
             align-items: center;
         }
-        .trendD::before{
+
+        .trendD::before {
             content: " ";
             width: 15px;
-            height:70px;
+            height: 70px;
             background-color: black;
             border-radius: 10px;
         }
-        .trendi{
+
+        .trendi {
             margin: 1px;
+        }
+
+        .trendD1 {
+            display: flex;
+            align-items: center;
+        }
+
+        .trendD1::before {
+            content: " ";
+            width: 15px;
+            height: 70px;
+            background-color: black;
+            border-radius: 10px;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container p {
+            position: absolute;
+            bottom: 8px;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            left: 15px;
+            font-weight: 100;
+            margin: 0;
+            text-shadow: 2px 2px 5px black;
+            text-align: center;
+        }
+
+        .w-90 {
+            width: 85%;
+        }
+
+        /* OUTER BOX (same as yours) */
+        .popular_section {
+            height: auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 8px rgba(0, 0, 0, 1);
+        }
+
+
+        /* HEADER (same style) */
+        .popular {
+            color: black;
+            width: fit-content;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 8px 15px;
+            margin-bottom: 15px;
+        }
+
+        /* IMPORTANT FIX HERE */
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            /* <-- THIS FIXES YOUR ISSUE */
+            gap: 20px;
+            padding: 5px;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* EACH TAG STYLE (optional but clean) */
+        li {
+            position: relative;
+            cursor: pointer;
+            font-size: 25px;
+            row-gap: 10px;
+        }
+
+        /* underline line */
+        li::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background: black;
+            transition: width 0.3s ease;
+        }
+
+        /* hover effect */
+        li:hover::after {
+            width: 100%;
+        }
+        .footer_section {
+            background-color: #111; /* Pitch black se thoda soft dark background */
+            color: #ccc;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+        .footer_section h5 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .footer_section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer_section a:hover {
+            color: #fff;
+        }
+        .bottom-bar {
+            border-top: 1px solid #ffffffda;
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            color: white;
+        }
+        .bottom-bar p {
+            color: white;
         }
     </style>
 </head>
+
 <body>
 
     <nav class="container-fluid bg-dark py-3">
         <div class="row align-items-center">
             <div class="col-md-4">
                 <div class="d-flex align-items-center">
-                    <img src="https://i.pinimg.com/736x/68/a1/ab/68a1ab0351751c2b80ea5ebdc34b0fcf.jpg" class="logo-img img-fluid" alt="Logo">
+                    <img src="https://i.pinimg.com/736x/68/a1/ab/68a1ab0351751c2b80ea5ebdc34b0fcf.jpg"
+                        class="logo-img img-fluid" alt="Logo">
                     <p class="logo-title ms-3">Ultra Wallpaper</p>
                 </div>
             </div>
@@ -100,7 +238,7 @@
         <h1>Welcome to Ultra Wallpaper</h1>
         <p>Bootstrap Grid Practice Project</p>
     </div>
-    
+
     <div class="container-fluid py-5 bg-light">
         <div class="container">
             <div class="row">
@@ -111,7 +249,8 @@
             <div class="row py-4 g-4">
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/26/92/f7/2692f7657d566e814bc084a6b1ef7360.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/26/92/f7/2692f7657d566e814bc084a6b1ef7360.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Street Wallpaper</h5>
                             <p class="card-text">490</p>
@@ -120,7 +259,8 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/e3/b1/d4/e3b1d42dd9f9497157cd5c2f97c27133.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/e3/b1/d4/e3b1d42dd9f9497157cd5c2f97c27133.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Painting Wallpaper</h5>
                             <p class="card-text">500</p>
@@ -129,7 +269,8 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/3f/82/e2/3f82e2237e8bc4ad11a981b7239355fd.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/3f/82/e2/3f82e2237e8bc4ad11a981b7239355fd.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Food Wallpaper</h5>
                             <p class="card-text">1000</p>
@@ -138,7 +279,8 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/44/cb/2b/44cb2b185c25f591866ed4dbd231901d.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/44/cb/2b/44cb2b185c25f591866ed4dbd231901d.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Bird Wallpaper</h5>
                             <p class="card-text">200</p>
@@ -147,7 +289,8 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/cf/9d/55/cf9d55cd65857216ecec50000c808bbf.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/cf/9d/55/cf9d55cd65857216ecec50000c808bbf.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Beaches</h5>
                             <p class="card-text">400</p>
@@ -156,7 +299,8 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/fa/88/12/fa881292d65dfb1b208c1d5d067285ed.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/fa/88/12/fa881292d65dfb1b208c1d5d067285ed.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Bikes</h5>
                             <p class="card-text">140</p>
@@ -165,7 +309,8 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/22/36/63/2236638dfa53913ed8383b0dbf6ec748.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/22/36/63/2236638dfa53913ed8383b0dbf6ec748.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Flowers</h5>
                             <p class="card-text">800</p>
@@ -174,10 +319,91 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/736x/8a/b0/75/8ab075ece440d8df59c5ca1cd235d07d.jpg" class="card-img-top img-fluid" alt="Wallpaper">
+                        <img src="https://i.pinimg.com/736x/8a/b0/75/8ab075ece440d8df59c5ca1cd235d07d.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
                         <div class="card-body text-center">
                             <h5 class="card-title">Abstract</h5>
                             <p class="card-text">200</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/4d/5d/a7/4d5da724003bffa886ffce1086cdefd5.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Sci Fi</h5>
+                            <p class="card-text">400</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/9b/db/38/9bdb38262b7d1182a726fb018884485d.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Games</h5>
+                            <p class="card-text">200</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/e6/6d/27/e66d2710e9cd46db110c541b2cbd133f.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Music</h5>
+                            <p class="card-text">210</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/ba/bb/45/babb45f8f2c42ee5ec88ea4ff039a71d.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Celebration</h5>
+                            <p class="card-text">340</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/05/b1/c7/05b1c770d7895766b30a64b083ce9e35.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Architecture</h5>
+                            <p class="card-text">150</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/b3/9b/ff/b39bff66b8385afbf063636aca84af8d.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Anime</h5>
+                            <p class="card-text">500</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/e7/fb/2f/e7fb2fe37e5bccb1da7e2fcc79c48747.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Animal</h5>
+                            <p class="card-text">340</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://i.pinimg.com/736x/f1/ba/00/f1ba001a1b944a89f34a1bae522d0f5e.jpg"
+                            class="card-img-top img-fluid" alt="Wallpaper">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Movies</h5>
+                            <p class="card-text">300</p>
                         </div>
                     </div>
                 </div>
@@ -197,57 +423,253 @@
         <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/92/b1/79/92b1791393625bbb8f4d16d9a64c7873.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/92/b1/79/92b1791393625bbb8f4d16d9a64c7873.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/31/fa/86/31fa86dbd326e9f6023d5a831afeee34.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/31/fa/86/31fa86dbd326e9f6023d5a831afeee34.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/c6/e7/65/c6e76536f5e2d9bc0ace3218f767fd34.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/c6/e7/65/c6e76536f5e2d9bc0ace3218f767fd34.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/0f/71/01/0f7101a7911f8c5cb6378b89846c3424.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/0f/71/01/0f7101a7911f8c5cb6378b89846c3424.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/90/ff/b9/90ffb9b1b163b494575538e05a209f21.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/90/ff/b9/90ffb9b1b163b494575538e05a209f21.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/47/6f/97/476f97037dae609dad3d5c3b95805059.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/47/6f/97/476f97037dae609dad3d5c3b95805059.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/81/e4/49/81e449cee51ebe6799db5330d7f01f4c.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/81/e4/49/81e449cee51ebe6799db5330d7f01f4c.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/28/5b/fa/285bfac03bd6b5720c5bec21f499cf29.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/28/5b/fa/285bfac03bd6b5720c5bec21f499cf29.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/d2/f6/3a/d2f63adddfe5e6a154384bc895d7e0d1.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/d2/f6/3a/d2f63adddfe5e6a154384bc895d7e0d1.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
             <div class="col">
                 <div class="trending_item">
-                    <img src="https://i.pinimg.com/736x/80/8a/9b/808a9bf28241e155681127e61bdb8386.jpg" class="img-fluid card-img-top" alt="">
+                    <img src="https://i.pinimg.com/736x/80/8a/9b/808a9bf28241e155681127e61bdb8386.jpg"
+                        class="img-fluid card-img-top" alt="">
                 </div>
             </div>
         </div>
     </div>
+    <!----Features section -->
+    <div class="container py-4">
+        <div class="trendD1">
+            <div class="trendi1 px-4">
+                <h1>Featured Wallpaper</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2 mb-5">
+        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/0c/36/54/0c36542eb469f4ce3505c36ddc90baf3.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>FIFA WORLD Cup 2026</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/fc/21/cf/fc21cf2a40e819f03086b18697bc7945.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Uncompressed wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/24/43/0f/24430f02eb86588586f1794c65620f11.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Mac os 27 wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/b7/3a/5c/b73a5ca25d069acbad4b552bbbdb9df2.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Wide monitor wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/3e/e4/2a/3ee42a97188cc158e393d97f7bae89ac.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Windows 11 wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/c3/95/3f/c3953ff9a18c9bf9b875b7d3edfa9b6d.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Pitch black wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/80/8a/9b/808a9bf28241e155681127e61bdb8386.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Space wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/1200x/81/e7/61/81e7612feb580314b01cbce6f907c0b8.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>High Resolu wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/72/ae/e3/72aee33efb0997d93d6631a5dd3ac69b.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Neon Stock wallpaper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="trending_item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/2e/0c/0a/2e0c0afd0b7e60213a1b0678f3100caf.jpg"
+                            class="img-fluid card-img-top" alt="">
+                        <p>Car stcok wallpaper</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mx-auto w-90 py-5">
+
+    <div class="popular_section">
+
+        <h4 class="popular">POPULAR TAGS</h4>
+
+        <ul>
+            <li>Genshin Impact</li>
+            <li>Minimalist</li>
+            <li>8K</li>
+            <li>Yellow Background</li>
+            <li>SeaScope</li>
+            <li>2026 Movies</li>
+            <li>Sunset</li>
+            <li>Black Background</li>
+            <li>Green Abstract</li>
+            <li>Stock</li>
+            <li>Rocky Coast</li>
+            <li>5K</li>
+            <li>KATSEYE</li>
+            <li>Anime Girl</li>
+            <li>Ocean</li>
+            <li>Genshin Impact</li>
+            <li>Minimalist</li>
+            <li>8K</li>
+            <li>Yellow Background</li>
+            <li>Earth</li>
+            <li>2025 Movies</li>
+            <li>Sunrise</li>
+            <li>Evergreen</li>
+            <li>Universe</li>
+            <li>Hollywood</li>
+            <li>Bollywood</li>
+            <li>LifeStyle</li>
+            <li>Chinease</li>
+            <li>Movie Characer</li>
+            <li>Beaches</li>
+        </ul>
+
+    </div>
+
+</div>
+<footer>
+        <div class="container-fluid footer_section mt-5">
+            <div class="container">
+                <div class="row g-4"> <div class="col-12 col-md-6 col-lg-3">
+                        <h5>Legal</h5>
+                        <p class="small"><strong>Privacy Policy:</strong> We do not collect personal information unless voluntarily provided. Any third-party services follow their own policies.</p>
+                        <p class="small"><strong>Terms & Conditions:</strong> Wallpapers are for personal use only. For copyright removal requests, please contact us.</p>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5>Disclaimer</h5>
+                        <p class="small">All images belong to their respective owners. Wallpapers are collected from public sources for educational & personal use.</p>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5>Contact</h5>
+                        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> yourmail@example.com</p>
+                        <p><i class="bi bi-globe me-2"></i> <a href="https://www.4kutta.com" target="_blank">www.4kUltrawallpaper.com</a></p>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <h5>Developer</h5>
+                        <h6 class="text-white mb-1">Chandan Vishwakarma</h6>
+                        <p class="text-muted small mb-2">Full Stack Web Developer | Java Developer</p>
+                        <p class="small mb-3">Passionate about building responsive websites and solving DSA problems.</p>
+                    </div>
+
+                </div>
+
+                <div class="row bottom-bar text-center">
+                    <div class="col-12">
+                        <p class="mb-1">&copy; 2026 Car Stock Wallpaper. All Rights Reserved.</p>
+                        <p class="text small mb-0">Made with <span style="color: #e25555;">&hearts;</span> by Chandan Vishwakarma | Java &bull; DSA &bull; Web Development</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
